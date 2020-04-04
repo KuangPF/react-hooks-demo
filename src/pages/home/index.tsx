@@ -3,12 +3,13 @@
  * @Date: 2020-04-01 22:14:34
  * @Description: home page
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-01 22:27:31
+ * @LastEditTime: 2020-04-01 22:45:07
  */
 
 import React from 'react'
 
-const App = () => {
+const App = (props:any) => {
+  console.log(props)
   return <div>home</div>
 }
 
