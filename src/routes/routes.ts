@@ -3,19 +3,23 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-04 23:15:13
+ * @LastEditTime: 2020-04-05 19:58:24
  */
-import Home from 'pages/home'
+import UseState from 'pages/base/useState'
 
 const routes = [
   {
     path: '',
-    redirect: '/home'
+    redirect: '/base/useState'
   },
   {
-    path: '/home',
-    component: Home,
-    name: 'home'
+    name: 'base',
+    children: [
+      {
+        path: '/base/useState',
+        component: UseState
+      }
+    ]
   }
 ]
 

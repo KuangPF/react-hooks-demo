@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import routes from './routes'
 
 const App = () => {
-  const sortedRouters = routes.sort(item => (item.redirect !== undefined ? 1 : -1))
+  const nextRoutes = dealRoutes(routes, []).sort(item => (item.redirect !== undefined ? 1 : -1))
   return (
     <Router>
       <Switch>
-        {sortedRouters.map((route, i) => (
+        {nextRoutes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
@@ -18,9 +18,10 @@ const App = () => {
 
 function RouteWithSubRoutes(route: any) {
   return route.redirect ? (
-    <Redirect from={route.path} to={route.redirect} />
+    <Redirect exact from={route.path} to={route.redirect} />
   ) : (
     <Route
+      exact
       path={route.path}
       render={(props: any) => (
         // pass the sub-routes down to keep nesting
@@ -30,4 +31,19 @@ function RouteWithSubRoutes(route: any) {
   )
 }
 
+// 将树形 router 转为平级 router
+function dealRoutes(data: any, arr: Array<any>) {
+  if (Array.isArray(data) && data.length > 0) {
+    /* eslint-disable-next-line */
+    data.map(item => {
+      if (item.children) {
+        dealRoutes(item.children, arr)
+      } else {
+        arr.push(item)
+      }
+    })
+  }
+
+  return arr
+}
 export default App
