@@ -13,8 +13,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "noImplicitAny": false,
     "jsx": "react",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "importHelpers": true
   },
   "include": ["src"],
   "typeRoots": ["./node_modules/@types", "./@types"]
