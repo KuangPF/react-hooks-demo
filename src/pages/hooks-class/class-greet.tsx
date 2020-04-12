@@ -60,20 +60,22 @@ class Greet extends React.Component<{}, IState> {
   render() {
     const { name, surname, windowWidth } = this.state
     return (
-      <ThemeContext.Consumer>
-        {theme => (
-          <section className={theme}>
-            <Row label="Name">
-              <input value={name} onChange={this.handleNameChange} />
-            </Row>
-            <Row label="Surname">
-              <input value={surname} onChange={this.handleSurnameChange} />
-            </Row>
-            <LocalContext.Consumer>{local => <Row label="Language">{local}</Row>}</LocalContext.Consumer>
-            <Row label="Widht">{windowWidth}</Row>
-          </section>
-        )}
-      </ThemeContext.Consumer>
+      <div className="hooks-class-page">
+        <ThemeContext.Consumer>
+          {theme => (
+            <section className={theme}>
+              <Row label="Name">
+                <input value={name} onChange={this.handleNameChange} />
+              </Row>
+              <Row label="Surname">
+                <input value={surname} onChange={this.handleSurnameChange} />
+              </Row>
+              <LocalContext.Consumer>{local => <Row label="Language">{local}</Row>}</LocalContext.Consumer>
+              <Row label="Widht">{windowWidth}</Row>
+            </section>
+          )}
+        </ThemeContext.Consumer>
+      </div>
     )
   }
 }

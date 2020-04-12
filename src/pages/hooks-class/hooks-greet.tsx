@@ -3,7 +3,7 @@
  * @Date: 2020-04-11 22:59:49
  * @Description: hooks vs class component, hooks
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-12 20:48:50
+ * @LastEditTime: 2020-04-12 21:04:10
  */
 
 import React, { useState, useCallback, useContext, useEffect } from 'react'
@@ -23,16 +23,18 @@ const Greet = () => {
   useDocumentTitle(`${name.value} ${surName.value}`)
 
   return (
-    <section className={theme}>
-      <Row label="Name">
-        <input {...name} />
-      </Row>
-      <Row label="Surname">
-        <input {...surName} />
-      </Row>
-      <Row>{local}</Row>
-      <Row label="Widht">{width}</Row>
-    </section>
+    <div className="hooks-class-page">
+      <section className={theme}>
+        <Row label="Name">
+          <input {...name} />
+        </Row>
+        <Row label="Surname">
+          <input {...surName} />
+        </Row>
+        <Row>{local}</Row>
+        <Row label="Width">{width}</Row>
+      </section>
+    </div>
   )
 }
 
