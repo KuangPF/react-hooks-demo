@@ -15,3 +15,19 @@ code {
 #root {
   height: 100%;
 }
+/*========== Media Queries ==========*/
+
+@media (max-height: 515px) {
+  html {
+    height: auto;
+  }
+  body {
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 2000px) and (min-width: 700px) {
+  body {
+    padding: 20px 10px;
+  }
+}

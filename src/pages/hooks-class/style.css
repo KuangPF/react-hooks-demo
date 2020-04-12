@@ -143,20 +143,9 @@ section input {
   color: #000000;
 }
 
-/*========== Media Queries ==========*/
-
 @media (max-width: 415px) {
   .theme-golden {
     max-width: 90vw;
     margin: 0 auto;
-  }
-}
-
-@media (max-height: 515px) {
-  html {
-    height: auto;
-  }
-  body {
-    margin: 20px 0;
   }
 }
