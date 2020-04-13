@@ -3,7 +3,7 @@
  * @Date: 2020-02-15 16:28:10
  * @Description: react useReducer hooks
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-06 17:21:41
+ * @LastEditTime: 2020-04-13 18:52:18
  */
 
 import React, { useReducer, useRef } from 'react'
@@ -47,7 +47,7 @@ function UseReducerDemo() {
   return (
     <div>
       <p>1. 使用 useReduer 代替 useState:</p>
-      {count}
+      <p>count: {count}</p>
       <button
         onClick={() => {
           dispatch()
@@ -55,6 +55,7 @@ function UseReducerDemo() {
       >
         add
       </button>
+      <br />
       <p>2. 增删 list</p>
       <form onSubmit={handleSubmit}>
         <input ref={valueRef} />
