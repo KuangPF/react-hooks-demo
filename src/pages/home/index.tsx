@@ -3,60 +3,38 @@
  * @Date: 2020-04-01 22:14:34
  * @Description: home page
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-13 19:06:37
+ * @LastEditTime: 2020-04-13 20:47:14
  */
 
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
-const App = (props: any) => {
+import routeList from 'routes/routes'
+
+const App = () => {
+
+  const renderSubRoute = useCallback(subRouteList => {
+    return subRouteList.map((item, index) => {
+      return (
+        <li key={index}>
+          <Link to={`${item.path}`}>{item.path.split('/')[3]}</Link>
+        </li>
+      )
+    })
+  }, [])
+  
   return (
     <div>
-      <h3>basic</h3>
-      <ul>
-        <li>
-          <Link to="/basic/useState">useState</Link>
-        </li>
-        <li>
-          <Link to="/basic/useEffect">useEffect</Link>
-        </li>
-        <li>
-          <Link to="/basic/useContext">useContext</Link>
-        </li>
-      </ul>
-      <h3>Additional Hooks</h3>
-      <ul>
-        <li>
-          <Link to="/additional/useReducer">useReducer</Link>
-        </li>
-        <li>
-          <Link to="/additional/useCallback">useCallback</Link>
-        </li>
-        <li>
-          <Link to="/additional/useMemo">useMemo</Link>
-        </li>
-        <li>
-          <Link to="/additional/useRef">useRef</Link>
-        </li>
-      </ul>
-      <h3>custom-hooks</h3>
-      <ul>
-        <li>
-          <Link to="/custom-hooks/useProfile">useProfile</Link>
-        </li>
-        <li>
-          <Link to="/custom-hooks/useInput">useInput</Link>
-        </li>
-      </ul>
-      <h3>hooks vs class</h3>
-      <ul>
-        <li>
-          <Link to="/hooks-class/class-greet">class Greet</Link>
-        </li>
-        <li>
-          <Link to="/hooks-class/hooks-great">hooks Greet</Link>
-        </li>
-      </ul>
+      {routeList
+        .filter(item => !item.hide)
+        .map((item, index) => {
+          return (
+            <div key={index}>
+              <h3>{item.title || item.name}</h3>
+              <ul>{renderSubRoute(item.children)}</ul>
+            </div>
+          )
+        })}
     </div>
   )
 }

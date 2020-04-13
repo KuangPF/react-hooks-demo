@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-13 18:55:48
+ * @LastEditTime: 2020-04-13 20:21:58
  */
 import Home from 'pages/home'
 
@@ -21,14 +21,18 @@ import UseInput from 'pages/custom-hooks-page/useInput'
 import ClassGreet from 'pages/hooks-class/class-greet'
 import HooksGreat from 'pages/hooks-class/hooks-greet'
 
+
+// hide: filter out from the homepage
 const routes = [
   {
     path: '/home',
-    component: Home
+    component: Home,
+    hide: true
   },
   {
     path: '',
-    redirect: '/basic/useState'
+    redirect: '/home',
+    hide: true
   },
   {
     name: 'basic',
@@ -70,6 +74,7 @@ const routes = [
   },
   {
     name: 'custom-hooks',
+    title: 'custom hooks',
     children: [
       {
         path: '/custom-hooks/useProfile',
@@ -83,6 +88,7 @@ const routes = [
   },
   {
     name: 'hooks-class',
+    title: 'hooks vs class',
     children: [
       {
         path: '/hooks-class/class-greet',

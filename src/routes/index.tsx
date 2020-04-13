@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 import routes from './routes'
 
+const GITHUB_URL = '/react-hooks-demo'
 const App = () => {
   const nextRoutes = dealRoutes(routes, []).sort(item => (item.redirect !== undefined ? 1 : -1))
   return (
@@ -39,6 +40,10 @@ function dealRoutes(data: any, arr: Array<any>) {
       if (item.children) {
         dealRoutes(item.children, arr)
       } else {
+        item.path = `${GITHUB_URL}${item.path}`
+        if (item.redirect) {
+          item.redirect = `${GITHUB_URL}${item.redirect}`
+        }
         arr.push(item)
       }
     })
