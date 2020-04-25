@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:14:34
  * @Description: home page
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-13 20:47:14
+ * @LastEditTime: 2020-04-25 21:42:10
  */
 
 import React, { useCallback } from 'react'
@@ -17,7 +17,7 @@ const App = () => {
     return subRouteList.map((item, index) => {
       return (
         <li key={index}>
-          <Link to={`${item.path}`}>{item.path.split('/')[3]}</Link>
+          <Link to={`${item.path}`}>{item.path}</Link>
         </li>
       )
     })

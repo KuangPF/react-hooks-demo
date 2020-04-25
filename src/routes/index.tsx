@@ -1,19 +1,19 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 
 import routes from './routes'
 
-const GITHUB_URL = '/react-hooks-demo'
+// const GITHUB_URL = '/react-hooks-demo'
 const App = () => {
   const nextRoutes = dealRoutes(routes, []).sort(item => (item.redirect !== undefined ? 1 : -1))
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         {nextRoutes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch>
-    </Router>
+    </HashRouter>
   )
 }
 
@@ -40,9 +40,9 @@ function dealRoutes(data: any, arr: Array<any>) {
       if (item.children) {
         dealRoutes(item.children, arr)
       } else {
-        item.path = `${GITHUB_URL}${item.path}`
+        item.path = `${item.path}`
         if (item.redirect) {
-          item.redirect = `${GITHUB_URL}${item.redirect}`
+          item.redirect = `${item.redirect}`
         }
         arr.push(item)
       }
