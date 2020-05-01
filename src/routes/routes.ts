@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-05-01 10:05:09
+ * @LastEditTime: 2020-05-01 15:08:38
  */
 import Home from 'pages/home'
 
@@ -17,12 +17,15 @@ import UseMemo from 'pages/base/useMemo'
 import UseLayoutEffect from 'pages/base/useLayoutEffect'
 import UseDebugValue from 'pages/base/useDebugValue'
 
+import UseReducerCountV1 from 'pages/useReducer-useState/reducerCountV1'
+import UseStateCountV1 from 'pages/useReducer-useState/stateCountV1'
+import UseStateCountV2 from 'pages/useReducer-useState/stateCountV2'
+
 import UseProfile from 'pages/custom-hooks-page/useProfile'
 import UseInput from 'pages/custom-hooks-page/useInput'
 
 import ClassGreet from 'pages/hooks-class/class-greet'
 import HooksGreat from 'pages/hooks-class/hooks-greet'
-
 
 // hide: filter out from the homepage
 const routes = [
@@ -79,6 +82,23 @@ const routes = [
       {
         path: '/additional/useDebugValue',
         component: UseDebugValue
+      }
+    ]
+  },
+  {
+    name: 'useReducer vs useState',
+    children: [
+      {
+        path: '/useReducer-useState/reducerCount-v1',
+        component: UseReducerCountV1
+      },
+      {
+        path: '/useReducer-useState/stateCount-v1',
+        component: UseStateCountV1
+      },
+      {
+        path: '/useReducer-useState/stateCount-v2',
+        component: UseStateCountV2
       }
     ]
   },
