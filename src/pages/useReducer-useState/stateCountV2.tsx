@@ -6,42 +6,42 @@
  * @LastEditors  : KuangPF
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react'
 
 const CountApp = () => {
   const [state, setState] = useState({
     count: 0,
-    frozen: false,
-  });
+    frozen: false
+  })
 
-  const increase = () => {
+  const increase = useCallback(() => {
     setState(prevState => {
       if (prevState.frozen) {
-        return prevState;
+        return prevState
       }
       return {
         ...prevState,
-        count: state.count + 1,
-      };
-    });
-  };
+        count: prevState.count + 1
+      }
+    })
+  }, [])
 
-  const setFrozen = () => {
+  const setFrozen = useCallback(() => {
     setState(prevState => {
       return {
         ...prevState,
-        frozen: true,
-      };
-    });
-  };
+        frozen: true
+      }
+    })
+  }, [])
 
   useEffect(() => {
-    increase();
-    setFrozen();
-    increase();
-  }, []);
+    increase()
+    setFrozen()
+    increase()
+  }, [increase, setFrozen])
 
-  return <p>current count: {state.count}</p>;
-};
+  return <p>current count: {state.count}</p>
+}
 
 export default CountApp

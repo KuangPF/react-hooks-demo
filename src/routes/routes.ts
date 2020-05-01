@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-05-01 15:08:38
+ * @LastEditTime: 2020-05-01 15:29:08
  */
 import Home from 'pages/home'
 
@@ -14,6 +14,7 @@ import UseRef from 'pages/base/useRef'
 import UseEffect from 'pages/base/useEffect'
 import UseCallback from 'pages/base/useCallback'
 import UseMemo from 'pages/base/useMemo'
+import UseImperativeHandle from 'pages/base/useImperativeHandle'
 import UseLayoutEffect from 'pages/base/useLayoutEffect'
 import UseDebugValue from 'pages/base/useDebugValue'
 
@@ -74,6 +75,10 @@ const routes = [
       {
         path: '/additional/useRef',
         component: UseRef
+      },
+      {
+        path: '/additional/useImperativeHandle',
+        component: UseImperativeHandle
       },
       {
         path: '/additional/useLayoutEffect',
