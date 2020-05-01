@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-05-01 15:29:08
+ * @LastEditTime: 2020-05-01 21:46:55
  */
 import Home from 'pages/home'
 
@@ -41,7 +41,7 @@ const routes = [
     hide: true
   },
   {
-    name: 'basic',
+    name: 'Basic Hooks',
     children: [
       {
         path: '/basic/useState',
@@ -58,7 +58,7 @@ const routes = [
     ]
   },
   {
-    name: 'additional',
+    name: 'Additional Hooks',
     children: [
       {
         path: '/additional/useReducer',
@@ -109,7 +109,7 @@ const routes = [
   },
   {
     name: 'custom-hooks',
-    title: 'custom hooks',
+    title: 'Custom Hooks',
     children: [
       {
         path: '/custom-hooks/useProfile',
@@ -123,7 +123,7 @@ const routes = [
   },
   {
     name: 'hooks-class',
-    title: 'hooks vs class',
+    title: 'Hooks vs Class',
     children: [
       {
         path: '/hooks-class/class-greet',
