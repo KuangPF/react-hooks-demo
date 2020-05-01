@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:10:38
  * @Description: 路由文件
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-13 20:21:58
+ * @LastEditTime: 2020-05-01 10:05:09
  */
 import Home from 'pages/home'
 
@@ -14,6 +14,7 @@ import UseRef from 'pages/base/useRef'
 import UseEffect from 'pages/base/useEffect'
 import UseCallback from 'pages/base/useCallback'
 import UseMemo from 'pages/base/useMemo'
+import UseLayoutEffect from 'pages/base/useLayoutEffect'
 
 import UseProfile from 'pages/custom-hooks-page/useProfile'
 import UseInput from 'pages/custom-hooks-page/useInput'
@@ -69,6 +70,10 @@ const routes = [
       {
         path: '/additional/useRef',
         component: UseRef
+      },
+      {
+        path: '/additional/useLayoutEffect',
+        component: UseLayoutEffect
       }
     ]
   },
