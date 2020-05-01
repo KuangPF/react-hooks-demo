@@ -15,6 +15,7 @@ import UseEffect from 'pages/base/useEffect'
 import UseCallback from 'pages/base/useCallback'
 import UseMemo from 'pages/base/useMemo'
 import UseLayoutEffect from 'pages/base/useLayoutEffect'
+import UseDebugValue from 'pages/base/useDebugValue'
 
 import UseProfile from 'pages/custom-hooks-page/useProfile'
 import UseInput from 'pages/custom-hooks-page/useInput'
@@ -74,6 +75,10 @@ const routes = [
       {
         path: '/additional/useLayoutEffect',
         component: UseLayoutEffect
+      },
+      {
+        path: '/additional/useDebugValue',
+        component: UseDebugValue
       }
     ]
   },
