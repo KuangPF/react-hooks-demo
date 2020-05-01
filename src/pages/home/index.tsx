@@ -3,7 +3,7 @@
  * @Date: 2020-04-01 22:14:34
  * @Description: home page
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-25 21:42:10
+ * @LastEditTime: 2020-05-01 17:47:59
  */
 
 import React, { useCallback } from 'react'
@@ -16,7 +16,7 @@ const App = () => {
   const renderSubRoute = useCallback(subRouteList => {
     return subRouteList.map((item, index) => {
       return (
-        <li key={index}>
+        <li key={index} style={{lineHeight: '22px'}}>
           <Link to={`${item.path}`}>{item.path}</Link>
         </li>
       )
