@@ -38,6 +38,7 @@ This is a collection of simple [demos](https://kuangpf.com/react-hooks-demo/#/ho
 
 ### 仓库相关文章
 * [React Hooks 讲解](https://kuangpf.com/blog/2020/04/25/react-hooks/)
+* [why-react-hooks](https://kuangpf.com/blog/2020/05/04/why-react-hooks/)
 
 ### React Hooks 社区项目文章
 * [Making Sense of React Hooks](https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
