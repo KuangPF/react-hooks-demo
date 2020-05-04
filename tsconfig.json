@@ -16,7 +16,8 @@
     "noImplicitAny": false,
     "jsx": "react",
     "baseUrl": "src",
-    "importHelpers": true
+    "importHelpers": true,
+    "experimentalDecorators": true
   },
   "include": ["src"],
   "typeRoots": ["./node_modules/@types", "./@types"]
