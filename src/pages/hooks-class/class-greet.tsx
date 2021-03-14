@@ -3,7 +3,7 @@
  * @Date: 2020-04-11 22:59:17
  * @Description: hooks vs class component, class
  * @LastEditors: KuangPF
- * @LastEditTime: 2020-04-12 20:23:51
+ * @LastEditTime: 2021-03-14 10:41:41
  */
 import React from 'react'
 import { ThemeContext, LocalContext } from './context/class-context'
@@ -71,7 +71,7 @@ class Greet extends React.Component<{}, IState> {
                 <input value={surname} onChange={this.handleSurnameChange} />
               </Row>
               <LocalContext.Consumer>{local => <Row label="Language">{local}</Row>}</LocalContext.Consumer>
-              <Row label="Widht">{windowWidth}</Row>
+              <Row label="Width">{windowWidth}</Row>
             </section>
           )}
         </ThemeContext.Consumer>
